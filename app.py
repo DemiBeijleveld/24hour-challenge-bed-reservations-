@@ -90,7 +90,7 @@ def cancel():
         return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    db.create_all()
+    with app.app_context():  # Context voor database-aanmaak
+        db.create_all()  # Zorgt dat de database en tabellen worden aangemaakt
     app.run(debug=True)
-    with app.app_context():
-    db.create_all()
+
