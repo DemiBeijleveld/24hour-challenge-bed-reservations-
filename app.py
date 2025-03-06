@@ -91,7 +91,7 @@ def cancel():
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  # Dit maakt de database en tabellen aan
-    app.run(host='0.0.0.0', port=10000, debug=True)
-
+        db.create_all()
+        print("Database en tabellen aangemaakt!")
+    app.run(debug=True)
 
